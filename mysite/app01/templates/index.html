@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}主页{% endblock %}
+
+{% block content %}
+		 
+	<div class="operate_content"><br><br>
+	    <form method="post" enctype="multipart/form-data" id="upload" onsubmit="return validateDates()">
+            <label for="my_date">选择日期：</label>
+            <input type="date" id="start_date" name="start_date">
+            <input type="date" id="end_date" name="end_date">
+            <label for="my_model">选择数据模型：</label>
+
+            <select class="operate_select" id="model_type" name="model_type" >
+                <option value="admission_record">入院录</option>
+                <option value="diagnosis">患者诊断</option>
+                <option value="discharge_summary">出院小结</option>
+                <option value="ip_charge">住院费用明细</option>
+                <option value="ip_medication">住院医嘱</option>
+                <option value="ip_record">住院记录</option>
+                <option value="lab_detail">检验明细</option>
+                <option value="lab_report">检验报告</option>
+                <option value="op_charge">门诊费用明细</option>
+                <option value="op_firstvisit">初诊病历</option>
+                <option value="op_followup">复诊病历</option>
+                <option value="op_medication">门诊处方</option>
+                <option value="op_report">住院数据</option>
+                <option value="path_report">病理</option>
+                <option value="physicalExam">体格检查</option>
+                <option value="ris_report">影像检查</option>
+                <option value="patientinfo">患者基本信息</option>
+            </select><br><br><br>
+            {% csrf_token %}
+            <input class="button" type="submit" value = "上传专病数据"/>
+            <br><br><br><span style="color:red; font-size=bold;">{{status}}</span>
+        <form>
+	</div>
+{% endblock %}

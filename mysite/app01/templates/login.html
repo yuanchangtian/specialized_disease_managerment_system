@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}登录{% endblock %}
+
+{% block content %}
+	<div class="content">
+		<div id="content">
+	    	<div class="login-content">		    
+			    <div class="right">
+			        <br>
+			      	<h2>请登录...</h2>
+			      	<form method="post" action="" id="login" enctype="multipart/form-data">
+				        <div class="log-content">
+				        	<span style="color:red; font-size=bold;">{{status}}</span>
+				        	{{userform.as_p}}
+				        	{% csrf_token %}
+							<input class="button" type="submit" value = "登录" />			       
+				        </div>
+			      	</form>
+			    </div>
+	  		</div>
+	  	</div>
+	</div>
+{% endblock %}
