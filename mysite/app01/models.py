@@ -1,6 +1,5 @@
 #coding=utf-8
 from __future__ import unicode_literals
-#from PIL import Image
 from django.contrib import admin
 from django.db import models
 
